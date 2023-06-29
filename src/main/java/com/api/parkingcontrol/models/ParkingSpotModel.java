@@ -38,6 +38,9 @@ public class ParkingSpotModel implements Serializable {
   @Column(nullable = false)
   private LocalDateTime registrationDate;
 
+  @Column(nullable = false, length = 130)
+  private String responsibleName;
+
   @Column(nullable = false, length = 30)
   private String apartment;
 
@@ -114,6 +117,14 @@ public class ParkingSpotModel implements Serializable {
 
   public void setBlock(String block) {
     this.block = block;
+  }
+
+  public String getResponsibleName() {
+    return responsibleName;
+  }
+
+  public void setResponsibleName(String responsibleName) {
+    this.responsibleName = responsibleName;
   }
 
 }
