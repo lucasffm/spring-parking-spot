@@ -34,9 +34,10 @@ class ParkingSpotServiceTest {
   @Test
   void findAll_ShouldReturnPageOfParkingSpotModels() {
     // Arrange
-    Pageable pageable = Pageable.ofSize(10).withPage(0);
+    int pageSize = 10;
+    Pageable pageable = Pageable.ofSize(pageSize).withPage(0);
     List<ParkingSpotModel> parkingSpotModels = new ArrayList<>();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < pageSize; i++) {
       ParkingSpotModel model = new ParkingSpotModel();
       model.setId(UUID.randomUUID());
       model.setApartment(faker.number().toString());
